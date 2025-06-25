@@ -1,4 +1,4 @@
-## This is a _linked_ (mkfile) Makefile for trachoma (MMED 2025 project)
+## This is a _linked_ (mkfile) Makefile for tsetse
 
 current: target
 -include target.mk
@@ -6,33 +6,12 @@ current: target
 # -include makestuff/perl.def
 
 vim_session:
-	bash -cl "vmt README.md"
+	bash -cl "vmt"
 
 ######################################################################
 
 Sources += $(wildcard *.R *.md *.rmd)
 autopipeR = defined
-
-## comments.md
-
-Ignore += *.csv
-## ln -s data/*.csv . ##
-
-######################################################################
-
-autopipeR = defined
-
-mirrors += data
-
-read.Rout: read.R data/trachoma_sero_transmission_analysis_indiv.csv
-
-means.Rout: means.R read.rds
-
-scatter.Rout: scatter.R means.rda
-
-## Exploration of abx data and study structure
-abx.Rout: abx.R data/trachoma_sero_transmission_analysis_indiv.csv
-indiv.Rout: indiv.R data/trachoma_sero_transmission_analysis_indiv.csv
 
 ######################################################################
 
@@ -52,7 +31,6 @@ makestuff/Makefile:
 -include makestuff/os.mk
 
 -include makestuff/pipeR.mk
--include makestuff/mirror.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
