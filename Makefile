@@ -1,4 +1,4 @@
-## This is mmed25 (for projects)
+## This is mmed26 (for projects)
 ## See makestuff/listdir.md
 
 current: target
